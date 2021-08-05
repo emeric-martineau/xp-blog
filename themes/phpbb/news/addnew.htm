@@ -1,0 +1,57 @@
+<form method="post" action="addnew.php">
+  <table border="0" cellspacing="1" cellpadding="0" bgcolor="#D6D7DE" width="100%">
+    <tr> 
+      <td> 
+        <table border="0" cellspacing="1" cellpadding="0" bgcolor="white" width="100%">
+          <tr> 
+            <td> 
+              <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#efefef">
+                <tr> 
+                  <td bgcolor="#D6D7DE"> 
+                    <table border="0" cellspacing="0" cellpadding="10" width="100%">
+                      <tr> 
+                        <td class="titrebox" align="center">Ajouter une news</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="center">
+                    <table border="0" cellspacing="0" cellpadding="5" class="texte">
+                      <tr>
+                        <td colspan="4" align="center">Titre :<br>
+                          <input type="text" name="titre" class="form">
+                          <br>
+                          <br>
+                          Texte :<br>
+                          <textarea name="texte" wrap="VIRTUAL" class="form" cols="100" rows="10"></textarea>
+                        </td>
+                      </tr> 
+                      <tr>
+                        <td>Brouillon : 
+                          <select name="brouillon" class="form">
+                            <option value="1">Oui</option>
+                            <option value="0">Non</option>
+                          </select>
+                        </td>
+                        <td>Type : 
+                          <select name="type" class="form">{ TYPE_NEWS }</select>
+                        </td>
+                        <td>Catégorie : 
+                          <select name="categorie" class="form">{ CATEGORIE_NEWS }</select>
+                        </td>
+                        <td align="right">
+                          <input type="submit" value="Valider" name="ajouter" class="form">
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>

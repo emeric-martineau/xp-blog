@@ -1,0 +1,427 @@
+<html>
+<head>
+<title>Thème</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<b><font face="Arial, Helvetica, sans-serif"><u>IV - Th&egrave;me</u></font></b> <br>
+<br>
+Nous allons voir ici comment r&eacute;aliser un th&egrave;me pour XP-Blog.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.1 - Introduction</b><a name="1"></a><br>
+<br>
+XP-Blog utilise les fast-template pour g&eacute;n&eacute;rer les pages &agrave;
+afficher. Pour plus de renseignement, reportez-vous au chapitre consacr&eacute; 
+au fast-template.<br>
+Pour r&eacute;sumer, le texte qui sera remplac&eacute; est repr&eacute;sent&eacute; 
+par des variables du type { MAVARIABLE }.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.2 - Les variables globales</b><a name="2"></a><br>
+<br>
+Les variables globales sont des variables d&eacute;finies dasn toutes les pages. 
+Elle sont aux nombre de six :<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>THEME</td>
+    <td>Donne le r&eacute;pertoire du th&egrave;me qui est utilise. Cela permet 
+      de r&eacute;f&eacute;rer les images fournit avec le th&egrave;me.</td>
+  </tr>
+  <tr> 
+    <td>VERSION</td>
+    <td>Indique la version de XP-Blog du type &quot;XP-Blog version 0.7&quot;</td>
+  </tr>
+  <tr> 
+    <td>URL_SITE</td>
+    <td>Donne l'url du site qui &agrave; &eacute;t&eacute; entr&eacute;e dans 
+      le fichier de configuration.</td>
+  </tr>
+  <tr> 
+    <td>REP_IMAGE_CATEGORIE</td>
+    <td>Donne le r&eacute;pertoire contenant les images des cat&eacute;gories</td>
+  </tr>
+  <tr> 
+    <td>REP_IMAGE_TYPE</td>
+    <td>Donne le r&eacute;pertoire contenant les images des types</td>
+  </tr>
+</table>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.3 - Squelette.htm</b><a name="3"></a><br>
+<br>
+Le fichier <b>squelette.htm</b> est le fichier qui va &ecirc;tre &quot;charg&eacute;&quot; 
+d'afficher toutes les pages. C'est &agrave; dire que la variable <b>{ PAGE }</b> 
+va &ecirc;tre subtitu&eacute;e par les news, l'interface d'administration, etc... 
+La page contient cinq variables :<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>PAGE</td>
+    <td>Contient le r&eacute;sultat des pages &agrave; afficher</td>
+  </tr>
+  <tr> 
+    <td>LISTE_ARCHIVE</td>
+    <td>Contient la liste des liens sur les archives. La derni&egrave;re ann&eacute;e 
+      voit ses mois affich&eacute;s. Les autres seulement l'ann&eacute;e</td>
+  </tr>
+  <tr> 
+    <td>LIEN_PRECEDANT </td>
+    <td>Contient le lien sur la page pr&eacute;c&eacute;dente des news<sup>(1)</sup></td>
+  </tr>
+  <tr> 
+    <td>LIEN_SUIVANT </td>
+    <td>Contient le lien sur la page suivante des news<sup>(1)</sup></td>
+  </tr>
+  <tr> 
+    <td>LISTE_INDEX </td>
+    <td>Contient la liste des pages des news<sup>(1)</sup></td>
+  </tr>
+</table>
+<br>
+<sup>(1)</sup> : uniquement quand se sont les news qui sont affich&eacute;es.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.4 - lang.tpl</b><a name="4"></a><br>
+<br>
+Le fichier lang.tpl contient des variables pr&eacute;d&eacute;finies qui vont 
+&ecirc;tre utilis&eacute;es pour afficher par exemple les liens sur les archives, 
+etc... Il peut aussi contenir vos variables.<br>
+Le fichier contient obligatoirement les douze variables ci-dessous : <br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>MESSAGE_LOGIN_FAILED </td>
+    <td>Message affichant que l'identification a &eacute;chou&eacute;</td>
+  </tr>
+  <tr> 
+    <td>ID_DEJA_UTILISE</td>
+    <td>Message s'affichant quand l'id entr&eacute;e est d&eacute;j&agrave; utilis&eacute;</td>
+  </tr>
+  <tr> 
+    <td>ERREUR_ECRITURE_NEWS</td>
+    <td>Message s'affichant quand XP-Blog n'arrive pas &agrave; &eacute;crire
+      les news. <sup></sup></td>
+  </tr>
+  <tr> 
+    <td>ERREUR_LECTURE_REP_NEWS</td>
+    <td>Message s'affichant quand XP-Blog n'arrive pas &agrave; lire les news.
+      <sup></sup></td>
+  </tr>
+  <tr> 
+    <td>ERREUR_LECTURE_NEWS_PRECISEE</td>
+    <td>Message s'affichant quand le mois demand&eacute; est introuvable</td>
+  </tr>
+  <tr> 
+    <td>ERREUR_FORMAT_DATE_INVALIDE</td>
+    <td>Message s'affichant quand la date pass&eacute;e en param&egrave;tre est 
+      incorrecte </td>
+  </tr>
+  <tr> 
+    <td>ADMINISTRATION_NEWS</td>
+    <td>S'affiche quand on est connect&eacute;. Contient les liens pour supprimer, 
+      &eacute;diter les news.</td>
+  </tr>
+  <tr> 
+    <td>PRECEDANT</td>
+    <td>Lien pour la page pr&eacute;c&eacute;dante</td>
+  </tr>
+  <tr> 
+    <td>SUIVANT</td>
+    <td>Lien pour la page suivante</td>
+  </tr>
+  <tr>
+    <td>ERREUR_LECTURE_BROUILLON</td>
+    <td>Message s'affichant quand XP-Blog n'arrive pas &agrave; lire les brouillons</td>
+  </tr>
+  <tr> 
+    <td>ADMINISTRATION_BROUILLON</td>
+    <td>S'affiche quand on est connect&eacute;. Contient les liens pour supprimer, 
+      &eacute;diter les brouillons</td>
+  </tr>
+  <tr> 
+    <td>MODEL_LIEN_ARCHIVE</td>
+    <td>Lien sur les archives<sup></sup></td>
+  </tr>
+</table>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.5 - news.htm</b><a name="5"></a><br>
+<br>
+Pour l'affichage des news, il y a neuf variables :<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>TITRE_NEWS</td>
+    <td>Contient le titre de la news</td>
+  </tr>
+  <tr> 
+    <td>DATE_NEWS </td>
+    <td>Contient la date de la news</td>
+  </tr>
+  <tr> 
+    <td>HEURE_NEWS </td>
+    <td>Contient l'heure de la news<sup></sup></td>
+  </tr>
+  <tr> 
+    <td>TEXTE_NEWS</td>
+    <td>Contient le texte de la news<sup></sup></td>
+  </tr>
+  <tr> 
+    <td>CATEGORIE_NOM_NEWS</td>
+    <td>Contient le nom de la cat&eacute;gorie</td>
+  </tr>
+  <tr> 
+    <td>CATEGORIE_IMAGE_NEWS</td>
+    <td>Contient uniquement le nom de l'image ! N'oubliez pas d'ajouter { REP_IMAGE_CATEGORIE 
+      }</td>
+  </tr>
+  <tr> 
+    <td>TYPE_NOM_NEWS </td>
+    <td>Contient le nom du type</td>
+  </tr>
+  <tr> 
+    <td>TYPE_IMAGE_NEWS</td>
+    <td>Contient uniquement le nom de l'image ! N'oubliez pas d'ajouter { REP_IMAGE_TYPE 
+      }</td>
+  </tr>
+  <tr> 
+    <td>ADMIN_NEWS</td>
+    <td>Contient les liens pour l'administration</td>
+  </tr>
+</table>
+<br>
+<br>
+<b>&nbsp;&nbsp;4.6 - auth.htm</b><a name="6"></a><br>
+<br>
+Ce fichier est afficher lorsqu'on veut se connecter &agrave; l'administration.<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>MESSAGE_LOGIN</td>
+    <td>Contient le message d'erreur quand la connexion &agrave; &eacute;chou&eacute;.</td>
+  </tr>
+</table>
+<br>
+<br>
+<b>&nbsp;&nbsp;4.7 - admin.php</b><a name="7"></a><br>
+<br>
+Ce fichier repr&eacute;sente le pannea de configuration.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.8 - acces.refuse.htm</b><a name="8"></a><br>
+<br>
+Ce fichier affiche le messsage indiquant que l'acc&egrave;s est refus&eacute;.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.9 - erreur.sessionid.htm</b><a name="9"></a><br>
+<br>
+Ce fichier s'affiche quand vous essayer de vous connecter et qu'il est impossible 
+d'&eacute;crire le num&eacute;ro de session dans le fichier data/sessionid.php. 
+V&eacute;rifier les droits d'acc&egrave;s du fichier et du r&eacute;pertoire.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.10 - message.htm</b><a name="10"></a><br>
+<br>
+Ce fichier affiche les messages d'erreurs, par exemple pour indiquer que l'id 
+saisie est d&eacute;j&agrave; utilis&eacute;.<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>MESSAGE</td>
+    <td>Contiendra le message</td>
+  </tr>
+</table>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.11 - news/addnews.htm</b><a name="11"></a><br>
+<br>
+Ce fichier est affich&eacute; pour saisir l'entr&eacute;e d'une nouvelle news. 
+Il contient deux variables :<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>TYPE_NEWS</td>
+    <td>Contient la liste des types</td>
+  </tr>
+  <tr> 
+    <td> CATEGORIE_NEWS</td>
+    <td>Contient la liste des cat&eacute;gories</td>
+  </tr>
+</table>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.12 - news/editnews.htm</b><a name="12"></a><br>
+<br>
+Le fichier editnews.htm sert &agrave; afficher une news en vue de la modifier. 
+Il y a cinq variables :<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>ID_NEWS</td>
+    <td>Repr&eacute;sente l'id de la news.</td>
+  </tr>
+  <tr> 
+    <td>TITRE_NEWS</td>
+    <td>Repr&eacute;sente le titre de la news</td>
+  </tr>
+  <tr> 
+    <td>TEXTE_NEWS</td>
+    <td>Repr&eacute;sente le texte de la news</td>
+  </tr>
+  <tr> 
+    <td>TYPE_NEWS</td>
+    <td>Contient la liste des types disponibles. Sera positionn&eacute; sur le 
+      type de la news.</td>
+  </tr>
+  <tr> 
+    <td>CATEGORIE_NEWS</td>
+    <td>Contient la liste des cat&eacute;gories disponibles. Sera positionn&eacute; 
+      sur la cat&eacute;goriede la news.</td>
+  </tr>
+</table>
+<br>
+<br>
+&nbsp;<b>4.13 - news/editnews.htm</b><a name="13"></a><br>
+<br>
+Le fichier types.htm affiche la liste des types disponible, avec leurs catact&eacute;ristiques, 
+ainsi qu'un formulaire pour en cr&eacute;er un nouveau. Il y a trois variables 
+:<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>MESSAGE_TYPES</td>
+    <td>Affiche les messages d'erreur</td>
+  </tr>
+  <tr> 
+    <td>IMAGE</td>
+    <td>Affiche la liste des images disponibles pour les types.</td>
+  </tr>
+  <tr> 
+    <td>LISTE_TYPES</td>
+    <td>Affiche la liste de type. Cette variables est le r&eacute;sultat de l'interpr&eacute;tation 
+      de la variable LIGNE_TABLEAU_TYPES se trouvant dans le fichier types/vars.tpl</td>
+  </tr>
+</table>
+<br>
+Dans le fichiers types/vars.tpl on trouve aussi les variables :<br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>ERREUR_LECTURE_TYPES</td>
+    <td>Message d'erreur quand la lecture des types est impossible</td>
+  </tr>
+  <tr> 
+    <td>ERREUR_ECRITURE_TYPES</td>
+    <td>Message d'erreur quand l'&eacute;criture des types est impossible</td>
+  </tr>
+</table>
+<br>
+Pour la variable LIGNE_TABLEAU_TYPES, quatre autres variables sont utilis&eacute;es 
+: <br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>ID</td>
+    <td>Repr&eacute;sente l'id du type</td>
+  </tr>
+  <tr> 
+    <td>NOM</td>
+    <td>Nom du type</td>
+  </tr>
+  <tr> 
+    <td>DESCRIPTION</td>
+    <td>Description du type</td>
+  </tr>
+  <tr> 
+    <td>IMAGE</td>
+    <td>Image repr&eacute;sentant le type</td>
+  </tr>
+</table>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.14 - types/edittype.htm</b><a name="14"></a><br>
+<br>
+Ce fichier va &eacute;diter le type choisi. Il y a quatre variables : <br>
+<br>
+<table border="1" cellspacing="0" cellpadding="2">
+  <tr> 
+    <td><b>Nom des variables</b></td>
+    <td><b>Signification</b></td>
+  </tr>
+  <tr> 
+    <td>ID</td>
+    <td>Repr&eacute;sente l'id du type</td>
+  </tr>
+  <tr> 
+    <td>NOM</td>
+    <td>Nom du type</td>
+  </tr>
+  <tr> 
+    <td>DESCRIPTION</td>
+    <td>Description du type</td>
+  </tr>
+  <tr> 
+    <td>IMAGE</td>
+    <td>Image repr&eacute;sentant le type</td>
+  </tr>
+</table>
+<br>
+<br>
+&nbsp;&nbsp;<b>4.15 - Les cat&eacute;gories</b><a name="15"></a><br>
+<br>
+Comme toujours, il n'y a pas de diff&eacute;rence entre cat&eacute;gories et types. 
+Pour la gestion de cat&eacute;gories, prennez les types et remplacer <b>TYPES</b> 
+par <b>CATEGORIES</b>, <b>editcategorie.php?type=1</b> par <b>editcategorie.php?type=0</b>, 
+<b>categories.php?type=1</b> par <b>categories.php?type=0</b>. <br>
+<br>
+<br>
+<font size="-1"><i>$ Bubule - 0.8 - 22/05/2003 14h05 $</i></font> 
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+  <root>
+    <types>
+      <id>1</id>
+      <nom>Version d'XP-Blog</nom>
+      <description>Nouvelle version d'XP-Blog</description>
+      <image></image>
+    </types>
+    <types>
+      <id>0</id>
+      <nom>auncune</nom>
+      <description>Auncune</description>
+      <image></image>
+    </types>
+  </root>

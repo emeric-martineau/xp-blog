@@ -1,0 +1,49 @@
+<form method="post" action="{ URL_SITE }editcategorie.php?type=1">
+  <table border="0" cellspacing="1" cellpadding="0" bgcolor="#D6D7DE" width="100%">
+    <tr> 
+      <td> 
+        <table border="0" cellspacing="1" cellpadding="0" bgcolor="white" width="100%">
+          <tr> 
+            <td> 
+              <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#efefef">
+                <tr> 
+                  <td bgcolor="#D6D7DE"> 
+                    <table border="0" cellspacing="0" cellpadding="10" width="100%">
+                      <tr> 
+                        <td class="titrebox" align="center">Modification d'un 
+                          type </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="center" class="texte">ID :<br>
+                    <input type="text" name="id" value="{ ID }" class="form">
+                    <br>
+                    <br>
+                    Nom : <br>
+                    <input type="text" name="nom" value="{ NOM }" class="form">
+                    <br>
+                    <br>
+                    Description :<br>
+                    <input type="text" name="description" value="{ DESCRIPTION }" class="form">
+                    <br>
+                    <br>
+                    Image :<br>
+                    <select name="image" class="form"><option value="">auncune</option>{ IMAGE }</select>
+                    <br>
+                    <br>
+                    <input type="submit" value="Modifier" name="modifier" class="form">
+                    <input type="reset" value="Annuler" name="reset" class="form">
+                    <input type="button" value="Retour" class="form" onClick="window.location='{ URL_SITE }categories.php?type=1';" name="button">
+                    <input type="hidden" value="{ ID }" name="oldid">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>

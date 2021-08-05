@@ -1,0 +1,3 @@
+LIGNE_TABLEAU_CATEGORIES = "<tr class='texte'><td>{ ID }</td><td>{ NOM }</td><td>{ DESCRIPTION }</td><td>{ IMAGE }</td><td align='right'><a href='{ URL_SITE }categories.php?type=0&supprimer=1&id={ ID }'>Supprimer</a> | <a href='{ URL_SITE }editcategorie.php?type=0&id={ ID }'>Editer</a></td></tr>"
+ERREUR_LECTURE_CATEGORIES = "<b>ERREUR</b> Impossible de lire les types."
+ERREUR_ECRITURE_CATEGORIES = "<b>ERREUR</b> Impossible d'enregistrer le type."

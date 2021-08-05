@@ -1,0 +1,30 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #dee3e7; FONT: 10px MS Sans Serif, verdana, arial, sans-serif; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #dee3e7; COLOR: #006699; SCROLLBAR-3DLIGHT-COLOR: #d1d7dc; SCROLLBAR-ARROW-COLOR: #006699; SCROLLBAR-TRACK-COLOR: #efefef; SCROLLBAR-DARKSHADOW-COLOR: #98aab1;
+}
+.orange {
+	FONT-SIZE: 10px; COLOR: #ff6900; FONT-FAMILY: MS Sans Serif, verdana, arial, sans-serif; font-weight : bold;
+}
+.piedDePage {
+	FONT-SIZE: 10px; COLOR: black; FONT-FAMILY: MS Sans Serif, verdana, arial, sans-serif;
+}
+.titrebox {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000;  FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; LETTER-SPACING: normal
+}
+A {
+	FONT-SIZE: 11px; COLOR: #006699; FONT-FAMILY: Arial, Helvetica, Verdana, Geneva, sans-serif; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #006699; TEXT-DECORATION: underline;
+}
+A:visited {
+	FONT-SIZE: 11px; COLOR: #006699; FONT-FAMILY: Arial, Helvetica, Verdana, Geneva, sans-serif;
+}
+A:active {
+	FONT-SIZE: 11px; COLOR: #006699; FONT-FAMILY: Arial, Helvetica, Verdana, Geneva, sans-serif;
+}
+.texte {
+    FONT-SIZE: 11px		
+}
+.form {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 11px; BACKGROUND: #ffffff; BORDER-LEFT: #000000 1px solid; COLOR: #006699; TEXT-INDENT: 1px; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: Arial, Helvetica, Verdana, Geneva, sans-serif;
+}

@@ -1,0 +1,58 @@
+<form method="post" action="editnews.php?brouillon={ BROUILLON }&pos={ POSITION }&date={ DATE }">
+  <table border="0" cellspacing="1" cellpadding="0" bgcolor="#D6D7DE" width="100%">
+    <tr> 
+      <td> 
+        <table border="0" cellspacing="1" cellpadding="0" bgcolor="white" width="100%">
+          <tr> 
+            <td> 
+              <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#efefef">
+                <tr> 
+                  <td bgcolor="#D6D7DE"> 
+                    <table border="0" cellspacing="0" cellpadding="10" width="100%">
+                      <tr> 
+                        <td class="titrebox" align="center">Modifier une news</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="center"> 
+                    <table border="0" cellspacing="0" cellpadding="5" class="texte">
+                      <tr> 
+                        <td colspan="4" align="center">Id :<br>
+                          <input type="text" name="id" value="{ ID_NEWS }" class="form">
+                          <br>
+                          <br>
+                          Titre :<br>
+                          <input type="text" name="titre" value="{ TITRE_NEWS }" class="form">
+                          <br>
+                          <br>
+                          Texte :<br>
+                          <textarea name="texte" wrap="VIRTUAL" cols="100" rows="10" class="form">{ TEXTE_NEWS }</textarea>
+                        </td>
+                      </tr>
+                      <tr> 
+                        <td>
+                          <input type="hidden" name="oldid" value="{ ID_NEWS }">
+                        </td>
+                        <td>Type : 
+                          <select name="type" class="form">{ TYPE_NEWS }</select>
+                        </td>
+                        <td>Catégorie : 
+                          <select name="categorie" class="form">{ CATEGORIE_NEWS }</select>
+                        </td>
+                        <td align="right"> 
+                          <input type="submit" value="Modifier" name="modifier" class="form">
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>

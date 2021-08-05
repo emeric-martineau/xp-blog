@@ -1,0 +1,71 @@
+{ MESSAGE_TYPES } 
+<table border="0" cellspacing="1" cellpadding="0" bgcolor="#D6D7DE" width="100%">
+  <tr> 
+    <td> 
+      <table border="0" cellspacing="1" cellpadding="0" bgcolor="white" width="100%">
+        <tr> 
+          <td> 
+            <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#efefef">
+              <tr> 
+                <td bgcolor="#D6D7DE" colspan="5"> 
+                  <table border="0" cellspacing="0" cellpadding="10" width="100%">
+                    <tr> 
+                      <td class="titrebox" align="center">Liste des types</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              { LISTE_TYPES }
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br>
+
+<form method="post" action="{ URL_SITE }categories.php?type=1">
+  <table border="0" cellspacing="1" cellpadding="0" bgcolor="#D6D7DE" width="100%">
+    <tr> 
+      <td> 
+        <table border="0" cellspacing="1" cellpadding="0" bgcolor="white" width="100%">
+          <tr> 
+            <td> 
+              <table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#efefef">
+                <tr> 
+                  <td bgcolor="#D6D7DE"> 
+                    <table border="0" cellspacing="0" cellpadding="10" width="100%">
+                      <tr> 
+                        <td class="titrebox" align="center">Ajout d'un nouveau 
+                          type</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="center" class="texte">Nom :<br>
+                    <input name="nom" type="text" class="form">
+                    <br>
+                    <br>
+                    Description :<br>
+                    <input name="description" type="text" class="form">
+                    <br>
+                    <br>
+                    Image :<br>
+                    <select name="image" class="form"><option value="">auncune</option>{ IMAGE }</select>
+                    <br>
+                    <br>
+                    <input type="submit" name="ajouter" value="Ajouter" class="form">
+                    <input type="button" value="Retour" class="form" onClick="window.location='{ URL_SITE }admin.php';" name="button">
+                    <br>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>

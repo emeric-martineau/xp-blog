@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>Installation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<b><font face="Arial, Helvetica, sans-serif"><u>II - Installation</u></font></b><br>
+<br>
+&nbsp;&nbsp;<b>2.1 - Installation</b><br>
+<br>
+Apr&egrave;s avoir t&eacute;l&eacute;charg&eacute; les sources sur <a href="http://php4php.free.fr/xp-log/">http://php4php.free.fr/xp-log/</a>,
+il faut les compiler... non, je plaisante, c'est du PHP, il n'y a pas de compilation, 
+il y a juste &agrave; extraire l'archive t&eacute;l&eacute;charg&eacute;e dans 
+le r&eacute;pertoire de votre choix et c'est tout.<br>
+<br>
+&nbsp;&nbsp;<b>2.2 - Configuration</b> <br>
+<br>
+Maintenant, passons aux choses s&eacute;rieuses, avec la configuration. B'en oui, 
+il va falloir configurer le site aux petits oignons mais rassurez-vous, c'est 
+facile puisqu'il suffit juste d'&eacute;diter le fichier <b><font face="Courier New, Courier, mono" size="-1">config.php</font></b> 
+situ&eacute; dans le r&eacute;pertoire <b><font face="Courier New, Courier, mono" size="-1">includes</font></b>. 
+<b>ATTENTION</b> ! Le fichier est lu par l'interpreteur PHP, donc si vous entrez 
+un mauvais caract&egrave;re, cela peut emp&ecirc;cher XP-Blog de s'ex&eacute;cuter
+correctement.<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="5">
+  <tr> 
+    <td valign="top"><b><font face="Arial, Helvetica, sans-serif">Param&egrave;tre</font></b></td>
+    <td valign="top"><b><font face="Arial, Helvetica, sans-serif">Valeur d'exemple</font></b></td>
+    <td valign="top"><b><font face="Arial, Helvetica, sans-serif">Explication</font></b></td>
+  </tr>
+  <tr> 
+    <td valign="top">theme</td>
+    <td valign="top">&quot;classic&quot;</td>
+    <td valign="top">Param&egrave;tre le th&egrave;me utilis&eacute; pour l'affichage 
+      de XP-Blog. Le nom du th&egrave;me est le nom du r&eacute;pertoire dans 
+      le r&eacute;pertoire <font size="-1"> <font face="Courier New, Courier, mono"> 
+      <b>themes/</b></font></font>. </td>
+  </tr>
+  <tr> 
+    <td valign="top">longueurSessionId</td>
+    <td valign="top">30</td>
+    <td valign="top">Configure la longueur (nombre de caract&egrave;res) de la 
+      clef de session. La clef de session est un &quot;num&eacute;ro&quot; g&eacute;n&eacute;r&eacute; 
+      al&eacute;atoirement lorsque l'identification est correcte. Ce num&eacute;ro 
+      est inscrit dans un cookie (d&eacute;sol&eacute;) et &eacute;vite ainsi 
+      d'inscrire le login et mot de passe sur la machine.</td>
+  </tr>
+  <tr> 
+    <td valign="top">tempSession</td>
+    <td valign="top">900</td>
+    <td valign="top">Nombre de secondes pendant lesquels la session est valide, 
+      apr&egrave;s l'identification. </td>
+  </tr>
+  <tr> 
+    <td valign="top">url</td>
+    <td valign="top">&quot;http://www.monsite.com/&quot;</td>
+    <td valign="top">URL du site web. <b>ATTENTION</b> ! N'oubliez pas d'ajouter 
+      le / &agrave; la fin.</td>
+  </tr>
+  <tr> 
+    <td valign="top">login</td>
+    <td valign="top">&quot;monlogin&quot;</td>
+    <td valign="top">Nom d'utilisateur pour se connecter &agrave; l'interface 
+      d'administration du site pour ajouter une news etc... Eviter les logins 
+      du type admin, root. Choisissez un nom peu commun.<br>
+      Il n'y a pas de diff&eacute;rence entre majuscules/minuscules.</td>
+  </tr>
+  <tr> 
+    <td valign="top">mdp</td>
+    <td valign="top">&quot;monPass&quot;</td>
+    <td valign="top">Mot de passe. Ne choisissez pas un mot de passe trop facile. 
+      Composez la avec lettres majuscules/minuscules et chiffres voir d'autres 
+      caract&egrave;res.</td>
+  </tr>
+  <tr> 
+    <td valign="top">nbNewsParPage</td>
+    <td valign="top">10</td>
+    <td valign="top">Nombre de nouvelles (blog) par page. Ne choisissez pas une 
+      valeur trop grande (30), ni trop petit (5). En effet, il n'y qu'au maximum 
+      31 jour dans un mois.</td>
+  </tr>
+  <tr> 
+    <td valign="top">fonctionsTemplate</td>
+    <td valign="top">array(&quot;date&quot; =&gt; &quot;\$STDOUT = date('Y');&quot;)</td>
+    <td valign="top">D&eacute;finit les fonctions pour le fast-template. Reportez-vous 
+      &agrave; la documentation fast-template pour en savoir plus.</td>
+  </tr>
+  <tr> 
+    <td valign="top">listeDesJours</td>
+    <td valign="top">array(&quot;Dimanche&quot;, &quot;Lundi&quot;, &quot;Mardi&quot;, 
+      &quot;Mercredi&quot;, &quot;Jeudi&quot;,<br>
+      &quot;Vendredi&quot;, &quot;Samedi&quot;)</td>
+    <td valign="top">Liste des jours de la semaine.</td>
+  </tr>
+  <tr> 
+    <td valign="top">listeDesMois</td>
+    <td valign="top">array(&quot;Janvier&quot;, &quot;F&eacute;vrier&quot;, &quot;Mars&quot;, 
+      &quot;Avril&quot;, &quot;Mai&quot;,<br>
+      &quot;Juin&quot;, &quot;Juillet&quot;, &quot;Ao&ucirc;t&quot;, &quot;Septembre&quot;, 
+      &quot;Octobre&quot;,<br>
+      &quot;Novembre&quot;, &quot;Descembre&quot;)</td>
+    <td valign="top">Liste de mois de l'ann&eacute;e.</td>
+  </tr>
+  <tr> 
+    <td valign="top">formatDateNews</td>
+    <td valign="top">&quot;%J %j %m %Y&quot;</td>
+    <td valign="top">Sp&eacute;cifie le format de la date quand elle est affich&eacute;e 
+      dans la news : %J : le nom du jour, %j : le num&eacute;ro du jour, %M : 
+      mois en chiffre, %m : mois en lettre, %Y : ann&eacute;e en chiffre, %% : 
+      %</td>
+  </tr>
+  <tr> 
+    <td valign="top">formatDateListeArchives</td>
+    <td valign="top">&quot;%Y, %m&quot;</td>
+    <td valign="top">idem</td>
+  </tr>
+  <tr> 
+    <td valign="top">repImageType</td>
+    <td valign="top">&quot;images/types/&quot;</td>
+    <td valign="top">r&eacute;pertoire contenant les images associ&eacute;es aux 
+      types.</td>
+  </tr>
+  <tr> 
+    <td valign="top">repImageCategorie</td>
+    <td valign="top">&quot;images/categories/&quot;</td>
+    <td valign="top">r&eacute;pertoire contant les images assosic&eacute;es aux 
+      cat&eacute;gories.</td>
+  </tr>
+</table>
+<br>
+<b>NOTE</b> : les chaines de caract&egrave;res doivent &ecirc;tre encadr&eacute;es 
+par &quot; ou '. Si dans une chaine de caract&egrave;res encadr&eacute;e par un 
+&quot; doit contenir un &quot;, alors il faut mettre le caract&egrave;re d'&eacute;chappement 
+\ devant le &quot; dans la chaine.<br>
+<br>
+&nbsp;&nbsp;<b>2.3 - Droits des fichiers</b><br>
+<br>
+Pour permettre &agrave; XP-Blog de fonctionner, il faut que l'interpretteur PHP 
+puisse lire et &eacute;crire certain fichiers et r&eacute;pertoires. L'interpr&eacute;teur 
+PHP doit pouvoir lire tout les fichiers. Il doit aussi pouvoir &eacute;crire sur 
+les fichiers <b>categories.xml</b>, <b>type.xml</b> et dans les r&eacute;pertoires 
+<b>data/</b> et <b>data/news/</b>.<br>
+<br>
+<br>
+<font size="-1"><i>$ Bubule - 0.8 - 22/05/2003 14h05 $</i></font> 
+</body>
+</html>

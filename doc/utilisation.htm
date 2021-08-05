@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>Utilisation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<b><font face="Arial, Helvetica, sans-serif"><u>III - Utilisation</u></font></b><br>
+  <br>
+&nbsp;&nbsp; <b>3.1 - Accueil du site<a name="1"></a></b><br>
+  <br>
+  Lorsqu'on arrive pour la premi&egrave;re fois sur le site, avec le th&egrave;me 
+  classic, voici ce qu'on peut obtenir : <br>
+  <br>
+  <img src="1.jpg" width="476" height="286"><br>
+  <br>
+On distingue 3 zones (plus peut-&ecirc;tre suivant votre th&egrave;me), une zone 
+contenant les archives, une zone contenant les textes, une zone contenant la barre 
+de navigation s'il y a trop de textes pour &ecirc;tre affich&eacute;s sur une 
+seul page.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>3.2 - Connexion &agrave; l'administration</b><a name="2"></a><br>
+  <br>
+  Pour ce connecter &agrave; l'administration du site, il faut soit ex&eacute;cuter 
+  le fichier auth.php ou cliquer sur le lien pr&eacute;vu pour cela. Nous voyons 
+  donc appara&icirc;tre : 
+<FORM action=http://localhost/auth.php method=post>Identifiant : <INPUT 
+      name=login><BR>Mot de passe : <INPUT type=password name=pass><BR><BR><INPUT type=submit value="Se connecter"> 
+  </FORM>
+<br>
+Lorsque les informations d'identification sont correct, le site envoie un cookie 
+(les bon p'tits g&acirc;teaux) contenant un num&eacute;ro de session. Ce num&eacute;ro 
+g&eacute;n&eacute;r&eacute; al&eacute;atoirement, &eacute;vite d'inscrire les 
+informations d'identification.<br>
+<br>
+<br>
+<b>&nbsp;&nbsp;3.3 - Panneau d'aministration</b><a name="3"></a><br>
+<br>
+Une fois connect&eacute;, le panneau (suivant les versions, cela peut diff&eacute;rer) 
+ci-dessous apparait :<br>
+&nbsp;<BR><BR><A href="http://localhost/index.php">Voir 
+      les news</A><BR><A href="http://localhost/index.php?brouillon=1">Voir les 
+      brouillons</A><BR><A href="http://localhost/categories.php">Gestion des 
+      catégories</A><BR><A href="http://localhost/categories.php?type=1">Gestion 
+      des types</A><BR><A href="http://localhost/addnew.php">Ajouter une 
+      news</A><BR><A href="http://localhost/phpinfo.php">Information sur le 
+      PHP</A><BR><BR><A href="http://localhost/auth.php?logout=1">se 
+      déconnecter</A>
+<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>3.4 - D&eacute;connexion</b><a name="4"></a><br>
+<br>
+Il est tr&egrave;s impostant de se d&eacute;connecter, cela permet de d&eacute;valider 
+la session en cours et si quelqu'un utilise votre ordinateur apr&egrave;s vous, 
+la session &eacute;tant encore valide (un temps de validit&eacute; trop long ?), 
+peut se connecter sans s'identifier.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>3.5 - Gestion des textes (news, nouvelles, blog...)</b><a name="5"></a><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>3.5.1 - Ajout d'un texte</b><a name="51"></a><br>
+<br>
+Pour ajouter un texte, il faut d&eacute;j&agrave; cliquer sur le lien dans le 
+panneau d'adminisration. Ensuiste, on &agrave; la page suivante qui s'affiche 
+:<br>
+<FORM action=addnew.php method=post>Titre : <INPUT name=titre><BR>Texte : <TEXTAREA name=texte wrap=VIRTUAL></TEXTAREA><BR>Brouillon : <SELECT 
+      name=brouillon> <OPTION value=1 selected>Oui</OPTION> <OPTION 
+        value=0>Non</OPTION></SELECT><BR>Type : <SELECT name=type><OPTION 
+        value=0 selected>essai</OPTION><OPTION 
+      value=2>ee</OPTION></SELECT><BR>Catégorie : <SELECT 
+        name=categorie><OPTION value=1 selected>ee</OPTION><OPTION 
+        value=0>dfdf</OPTION><OPTION value=3>rtr</OPTION></SELECT><BR><INPUT type=submit value=Ok name=ajouter> 
+      </FORM><br>
+Le titre et texte sont suffisament parlant pour ne pas &ecirc;tre expliqu&eacute;.<br>
+La case brouillon, indique si le texte que vous rentrez est un brouillon ou non. 
+Si c'est un brouillon, cela signifie qu'il ne va pas appara&icirc;tre sur le site 
+mais sera tout de m&ecirc;me sauvegarder.<br>
+Le type indique le type (je sais, je suis trop fort) de la news, par exemple : 
+photo, po&ecirc;me, coup de gueule.<br>
+La cat&eacute;gorie... c'est la m&ecirc;me chose que le type. En fait, les deux 
+combin&eacute;s permettre de faire un type photo avec un sous type vacances ou 
+l'inverse. Vous pouvez l'utiliser comme bon vous semble.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>3.5.2 - Voir, &eacute;diter, supprimer une news ou 
+un brouillon</b><a name="52"></a><br>
+<br>
+Pour voir, &eacute;diter, supprimer une news, il suffit d'aller sur la page d'accueil 
+du site ou de cliquer sur le lien dans le panneau d'aministration. Lorsqu'on &eacute;dite 
+une news, le date et heure ne sont pas mis &agrave; jour volontairement. L'id 
+est un num&eacute;ro unique pour identifier la news. Il est inutile de le modifier 
+cette valeur sauf si vous savez ce que vous faites.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>3.6 - Cat&eacute;gories</b><a name="6"></a><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>3.6.1 - Lister</b><a name="61"></a><br>
+<br>
+Pour lister les cat&eacute;gories, il suffit de cliquer sur le lien pr&eacute;vu 
+pour cela dans le panneau d'administration.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>3.6.2 - Ajouter</b><a name="62"></a><br>
+<br>
+Pour ajouter une cat&eacute;gorie, il suffit de compl&egrave;ter le formulaire 
+fournit avec la liste qui est celui ci dessous :<br>
+<br>
+<form method="post" action="http://localhost/categories.php">
+  Nom : <input name="nom" type="texte"><br>
+  Description : <input name="description" type="text"><br>
+  Image : <select name="image"><option value='monImage.jpg'>monImage.jpg</option></select><br>
+<br>
+  <input type="submit" name="ajouter" value="OK">
+  <input type="button" value="Retour" onClick="window.location='http://localhost/admin.php';">
+</form>
+<br>
+Le nom de la cat&eacute;gorie est ce qui appara&icirc;tra dans la liste ou dans 
+les news. La description sert uniquement pour vous, pour savoir &agrave; quoi 
+correspond la cat&eacute;gorie. L'image est associ&eacute; &agrave; la cat&eacute;gorie 
+pour faire plus jolie dans l'affichage des news. Ceci-dit nul n'emp&ecirc;che 
+de ne pas l'afficher.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>3.6.3 - Supprimer</b><a name="63"></a><br>
+<br>
+Suffit de cliquer sur le lien.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>3.6.4 - Editer</b><a name="64"></a><br>
+<br>
+Lorsque vous &eacute;diter la cat&eacute;gorie, vous obtenez l'&eacute;cran ci-dessous 
+:<br>
+<br>
+    <form method="post" action="editnews.php?brouillon=0&pos=1&date=200304">
+  Id : <input type="text" name="id" value="5"><br>
+  Titre : <input type="text" name="titre" value="Brouillon 3"><br>
+  Texte : <textarea name="texte" wrap="VIRTUAL">azgfhhy</textarea><br>
+  Type : <select name="type"><option value='0' selected>essai</option><option value='2'>ee</option></select><br>
+  Catégorie : <select name="categorie"><option value='1' selected>ee</option><option value='0'>dfdf</option><option value='3'>rtr</option></select><br>
+<input type="hidden" name="oldid" value="5">
+  <input type="submit" value="Ok" name="modifier">
+</form>
+<br>
+L'id est un num&eacute;ro unique qui identifie la cat&eacute;gorie. On peut changer 
+la cat&eacute;rorie de toutes les news en changeant le num&eacute;ro d'id. En 
+effet, les news se r&eacute;f&egrave;re au num&eacute;ro d'id. Cela peut &ecirc;tre 
+int&eacute;ressant pour inverser deux cat&eacute;gories entre elles.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>3.7 - Types</b><a name="7"></a><br>
+<br>
+Les types &eacute;tant la m&ecirc;me chose que les cat&eacute;gories (la diff&eacute;rence 
+se fera en fonction de ce que vous en fait) il suffit de relire la partie cat&eacute;gorie 
+en rempla&ccedil;ant cat&eacute;gorie par type.<br>
+<br>
+<br>
+&nbsp;&nbsp;<b>3.8 - Information sur le PHP</b><a name="8"></a><br>
+<br>
+Se lien affiche les informations de l'interpreteur PHP. Les connaisseurs reconnaitront 
+la fonction phpinfo().<br>
+<br>
+<br>
+<font size="-1"><i>$ Bubule - 0.8 - 22/05/2003 14h05 $</i></font> <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
