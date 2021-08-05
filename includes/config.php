@@ -83,6 +83,6 @@ class config
     var $repImageCategorie = "images/categories/" ;
 
     // Indique le version de XP-Blog. NE PAS MODIFIER
-    var $version = "XP-Blog version 0.8" ;
+    var $version = "XP-Blog version 1.0" ;
 }
 ?>

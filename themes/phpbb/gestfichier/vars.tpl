@@ -1,0 +1,1 @@
+LIGNE_TABLEAU = "<tr class='texte'><td>{ FICHIER }</td><td>{ TAILLE_FICHIER }</td><td><a href='gestfichier.php?type={ TYPE }&fichier={ FICHIER_URL }&action=supp'>Supprimer</a></td></tr>"

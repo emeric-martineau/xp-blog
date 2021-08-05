@@ -1,0 +1,69 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+  <tr>
+    <td width="100%" valign="top">
+      <table border="0" cellspacing="1" cellpadding="0" bgcolor="#D6D7DE" width="100%">
+        <tr> 
+          <td> 
+            <table border="0" cellspacing="1" cellpadding="0" bgcolor="white" width="100%">
+              <tr> 
+                <td> 
+                  <table border="0" cellspacing="0" cellpadding="5" width="100%" bgcolor="#efefef">
+                    <tr> 
+                      <td bgcolor="#D6D7DE" colspan="3"> 
+                        <table border="0" cellspacing="0" cellpadding="10" width="100%">
+                          <tr> 
+                            <td class="titrebox" align="center">Liste des images</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr class='texte'> 
+                      <td><b><u>Nom</u></b></td>
+                      <td><b><u>Taille</u></b></td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    { LISTE_FICHIER } 
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td valign="top">
+      <table border="0" cellspacing="1" cellpadding="0" bgcolor="#D6D7DE">
+        <tr> 
+          <td> 
+            <table border="0" cellspacing="1" cellpadding="0" bgcolor="white" width="100%">
+              <tr> 
+                <td> 
+                  <table border="0" cellspacing="0" cellpadding="5" width="100%" bgcolor="#efefef">
+                    <tr> 
+                      <td bgcolor="#D6D7DE"> 
+                        <table border="0" cellspacing="0" cellpadding="10" width="100%">
+                          <tr> 
+                            <td class="titrebox" align="center" nowrap>T&eacute;l&eacute;charger 
+                              une nouvelle image</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr class='texte'> 
+                      <td>{ MESSAGE } 
+                        <form method="post" action="{ URL_SITE }gestfichier.php?action=download" enctype="multipart/form-data">
+                          <input type="file" name="fichier_image" class="form">
+                          <input type="submit" name="Submit" value="T&eacute;l&eacute;charger" class="form">
+                        </form>
+                        </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

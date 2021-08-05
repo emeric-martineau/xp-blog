@@ -65,6 +65,22 @@ $monTheme->addVar(array("THEME" => $config->theme,
                         "REP_IMAGE_CATEGORIE" => $config->repImageCategorie,
                         "REP_IMAGE_TYPE" => $config->repImageType)) ;
 
+// Liste des modules
+$handle = opendir("modules/") ;
+
+if ($handle)
+{
+    while ($file = readdir($handle))
+    {
+      if ($file != "." && $file != "..")
+      {
+          $monTheme->addModule($file, "modules/" . $file . "/index.php") ;
+      }
+    }
+
+    closedir($handle) ;
+}
+
 // Gestion XML
 include("includes/touv_xml.class.php") ;
 
